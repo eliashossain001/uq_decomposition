@@ -1,13 +1,3 @@
-"""
-Post-Hoc Calibration Methods (FIXED)
-
-Implements:
-1. Temperature Scaling
-2. Isotonic Regression
-
-Author: Elias Hossain
-"""
-
 import argparse
 import sys
 from pathlib import Path
@@ -106,7 +96,7 @@ def collect_logits_and_labels(model, data_loader, device):
 
 
 def apply_temperature_scaling(checkpoint_path, data_loader, device, config):
-    """Apply temperature scaling calibration (FIXED)"""
+    """Apply temperature scaling calibration"""
     print("\n" + "="*60)
     print("Temperature Scaling Calibration")
     print("="*60 + "\n")

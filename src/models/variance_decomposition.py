@@ -1,22 +1,3 @@
-"""
-Layer-wise Variance Decomposition - Theorem 5 Implementation
-
-This module implements Theorem 5 from the paper:
-"Layer-wise Uncertainty Propagation in UAT-Lite"
-
-Mathematical Formulation:
-    Var[ŷ] = E_θ,ε_<L [Σ(l=1 to L) Var_ε_l[ŷ | h^(l-1)] + Var_θ,ε_<l[E_ε_l[ŷ | h^(l-1)]]]
-
-Where:
-    - First term: Aleatoric uncertainty (stochastic perturbations per layer)
-    - Second term: Epistemic uncertainty (parameter uncertainty)
-    - h^(l): Hidden state at layer l
-    - ε_l: Dropout mask at layer l
-    - θ: Model parameters
-
-Author: N/A
-Email: email@email.com
-"""
 
 import torch
 import torch.nn as nn

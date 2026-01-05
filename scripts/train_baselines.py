@@ -1,14 +1,3 @@
-"""
-Train Baseline Methods for Comparison
-
-Baselines:
-1. Vanilla BERT (no uncertainty)
-2. MC Dropout (output layer only)
-3. Deep Ensemble (5 models)
-
-
-"""
-
 import argparse
 import sys
 from pathlib import Path

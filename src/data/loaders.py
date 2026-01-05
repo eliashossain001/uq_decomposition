@@ -1,18 +1,3 @@
-"""
-Data Loaders for All Datasets
-
-Loads datasets from HuggingFace and prepares them for training.
-
-Supported datasets:
-- SQuAD 2.0
-- MNLI
-- SST-2
-- MedQA
-- PubMedQA
-- BoolQ
-
-"""
-
 import torch
 from torch.utils.data import Dataset, DataLoader
 from datasets import load_dataset

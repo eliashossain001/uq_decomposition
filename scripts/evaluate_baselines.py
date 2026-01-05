@@ -1,17 +1,3 @@
-"""
-Evaluate Baseline Models
-
-Evaluates Vanilla BERT and MC Dropout baselines on test data.
-
-Usage:
-    python scripts/evaluate_baselines.py \
-        --checkpoint experiments/baselines/squad/vanilla_bert_best.pt \
-        --baseline vanilla \
-        --dataset squad
-
-Author: Elias Hossain
-"""
-
 import argparse
 import sys
 from pathlib import Path

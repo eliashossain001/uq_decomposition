@@ -1,8 +1,3 @@
-"""
-Complete Training Script for UAT-Lite
-
-"""
-
 import argparse
 import sys
 from pathlib import Path

@@ -1,17 +1,3 @@
-"""
-Deep Ensemble Evaluation
-
-Evaluates ensemble of 5 models by averaging their predictions.
-
-Usage:
-    python scripts/evaluate_deep_ensemble.py \
-        --dataset squad \
-        --num_models 5 \
-        --batch_size 32
-
-Author: Elias Hossain
-"""
-
 import argparse
 import sys
 from pathlib import Path

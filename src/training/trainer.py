@@ -1,13 +1,4 @@
-"""
-Training Utilities for UAT-Lite
 
-Complete training loop with:
-- Progress tracking
-- Early stopping
-- Checkpointing
-- Logging
-
-"""
 
 import torch
 import torch.nn as nn
@@ -332,7 +323,7 @@ class Trainer:
 
 
 def test_trainer():
-    """Test the trainer with dummy data"""
+
     print("Testing Trainer...")
     
     print(" Trainer class is ready!")

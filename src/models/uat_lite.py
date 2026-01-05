@@ -1,9 +1,3 @@
-"""
-MedBayes-Lite: Main Model Implementation (MEMORY OPTIMIZED + FIXED)
-
-Author: Elias Hossain
-Email: mdelias.hossain@ucf.edu
-"""
 
 import torch
 import torch.nn as nn
@@ -16,9 +10,9 @@ from .confidence_decision import ConfidenceDecision
 from .variance_decomposition import LayerWiseVarianceDecomposition
 
 
-class MedBayesLite(nn.Module):
+class UATLite(nn.Module):
     """
-    MedBayes-Lite: Complete implementation (Memory Optimized)
+    UAT-Lite: Complete implementation (Memory Optimized)
     """
     
     def __init__(
@@ -334,4 +328,4 @@ class MedBayesLite(nn.Module):
 
 
 if __name__ == "__main__":
-    print("MedBayes-Lite model (Memory Optimized + Fixed) ready!")
+    print("UAT-Lite model (Memory Optimized + Fixed) ready!")

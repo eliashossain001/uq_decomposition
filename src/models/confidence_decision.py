@@ -1,23 +1,3 @@
-"""
-Confidence-Guided Decision Shaping - Component 3
-
-Implements confidence-based prediction with abstention mechanism.
-Uses entropy-based confidence scoring and thresholding.
-
-Confidence formula:
-    C(p) = 1 - H(p) / log(K)
-
-where:
-    - H(p) = -Σ p_k log(p_k) is prediction entropy
-    - K is number of classes
-    - C(p) ∈ [0, 1], with 1 being maximally confident
-
-Abstention rule:
-    Abstain if C(p) < τ
-
-Author: Elias Hossain
-Email: mdelias.hossain@ucf.edu
-"""
 
 import torch
 import torch.nn as nn

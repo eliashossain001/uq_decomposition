@@ -1,17 +1,3 @@
-"""
-SWAG: Stochastic Weight Averaging-Gaussian
-
-Implements SWAG for uncertainty quantification.
-
-Reference: https://arxiv.org/abs/1902.02476
-
-Usage:
-    python scripts/train_swag.py \
-        --dataset squad \
-        --num_classes 2 \
-        --epochs 3
-"""
-
 import argparse
 import sys
 from pathlib import Path

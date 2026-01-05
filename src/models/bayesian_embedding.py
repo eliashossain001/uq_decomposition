@@ -1,15 +1,3 @@
-"""
-Bayesian Embedding Calibration - Component 1
-
-Implements Monte Carlo Dropout for embedding-level uncertainty quantification.
-Uses Bayesian approximation: p(z | x) ≈ (1/M) Σ_m p(z | x, ε_m)
-
-where ε_m ~ Bernoulli(p) are dropout masks.
-
-Author: Elias Hossain
-Email: mdelias.hossain@ucf.edu
-"""
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

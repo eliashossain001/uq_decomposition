@@ -1,20 +1,3 @@
-"""
-Uncertainty-Weighted Attention - Component 2
-
-Modifies transformer attention mechanism to downweight unreliable tokens
-based on their uncertainty scores.
-
-Attention reweighting:
-    α'_ij = α_ij * exp(-λ * U(x_j))
-
-where:
-    - α_ij: Original attention weight from token i to token j
-    - U(x_j): Uncertainty score of token j
-    - λ: Uncertainty penalty hyperparameter
-
-Author: N/A
-Email: N/A@email.com
-"""
 
 import torch
 import torch.nn as nn

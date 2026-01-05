@@ -1,15 +1,3 @@
-"""
-Calibration Metrics for MedBayes-Lite
-
-Implements:
-- Expected Calibration Error (ECE)
-- Brier Score
-- Negative Log-Likelihood (NLL)
-- AURC (Area Under Risk-Coverage Curve)
-
-
-"""
-
 import torch
 import numpy as np
 from typing import Tuple, Dict
