@@ -1,0 +1,110 @@
+# -------------------------------
+# Python cache / artifacts
+# -------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# -------------------------------
+# Build, distribution, environment
+# -------------------------------
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# -------------------------------
+# Virtual Environments
+# -------------------------------
+venv/
+env/
+ENV/
+.venv/
+virtual_env/
+virtual_engine/
+
+# -------------------------------
+# IDE / OS files
+# -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# Jupyter
+# -------------------------------
+.ipynb_checkpoints/
+
+# -------------------------------
+# Data (raw or processed)
+# -------------------------------
+data/raw/
+data/processed/
+*.pkl
+*.pickle
+*.npz
+*.npy
+
+# -------------------------------
+# Model Weights
+# -------------------------------
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+
+# -------------------------------
+# Logs
+# -------------------------------
+logs/
+*.log
+wandb/
+tensorboard/
+
+# -------------------------------
+# Results that should not be versioned
+# -------------------------------
+results/figures/*
+results/tables/*
+results/analysis/*/*.csv
+
+# Allow metrics JSON files (important!)
+!results/**/metrics.json
+!results/**/results.json
+
+# -------------------------------
+# Experiments / Checkpoints
+# -------------------------------
+experiments/*/checkpoints/
+experiments/*/logs/
+
+# -------------------------------
+# Temporary files
+# -------------------------------
+tmp/
+temp/
+*.tmp
+
+# -------------------------------
+# Environment files
+# -------------------------------
+.env
+.env.*

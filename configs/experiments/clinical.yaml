@@ -1,0 +1,78 @@
+# Model Configuration
+model:
+  base_model: "emilyalsentzer/Bio_ClinicalBERT"
+  num_classes: 4  # For MedQA (4 options)
+  
+  # UAT-Lite Hyperparameters
+  mc_samples: 10
+  dropout_rate: 0.3
+  uncertainty_penalty: 0.5
+  confidence_threshold: 0.7
+  use_layer_decomposition: true
+
+# Dataset Configuration
+dataset:
+  name: "medqa"
+  max_length: 512
+  train_batch_size: 8  # Smaller for clinical data
+  eval_batch_size: 16
+  num_workers: 4
+
+# Training Configuration
+training:
+  num_epochs: 5  # More epochs for clinical data
+  learning_rate: 1.0e-5  # Lower LR for clinical domain
+  weight_decay: 0.01
+  warmup_steps: 1000
+  gradient_accumulation_steps: 2
+  max_grad_norm: 1.0
+  
+  early_stopping_patience: 5
+  early_stopping_metric: "cus"  # Clinical Uncertainty Score
+  
+  logging_steps: 50
+  eval_steps: 250
+  save_steps: 500
+
+# Optimizer
+optimizer:
+  type: "adamw"
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+
+# Scheduler
+scheduler:
+  type: "linear"
+  warmup_ratio: 0.15
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "ece"
+    - "brier"
+    - "nll"
+    - "accuracy"
+    - "f1"
+    - "cus"        # Clinical Uncertainty Score
+    - "zti"        # Zero-to-Infinity metric
+  
+  selective_prediction:
+    enabled: true
+    coverage_levels: [0.7, 0.8, 0.9, 1.0]
+  
+  reliability_diagram:
+    enabled: true
+    num_bins: 15
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# Hardware
+device: "cuda"
+mixed_precision: true
+
+# Output
+output_dir: "experiments/clinical/medqa"
+save_best_only: true
+save_total_limit: 3

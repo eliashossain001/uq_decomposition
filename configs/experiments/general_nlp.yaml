@@ -1,0 +1,80 @@
+# Model Configuration
+model:
+  base_model: "bert-base-uncased"
+  num_classes: 2
+  
+  # UAT-Lite Hyperparameters
+  mc_samples: 10              # M: Number of Monte Carlo samples
+  dropout_rate: 0.3           # p: Dropout probability
+  uncertainty_penalty: 0.5    # λ: Lambda for attention weighting
+  confidence_threshold: 0.7   # τ: Tau for abstention
+  use_layer_decomposition: true  # Enable Theorem 5
+
+# Dataset Configuration
+dataset:
+  name: "squad_v2"
+  max_length: 512
+  train_batch_size: 16
+  eval_batch_size: 32
+  num_workers: 4
+
+# Training Configuration
+training:
+  num_epochs: 3
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_steps: 500
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  
+  # Early Stopping
+  early_stopping_patience: 3
+  early_stopping_metric: "ece"
+  
+  # Logging
+  logging_steps: 100
+  eval_steps: 500
+  save_steps: 1000
+
+# Optimizer
+optimizer:
+  type: "adamw"
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+
+# Scheduler
+scheduler:
+  type: "linear"
+  warmup_ratio: 0.1
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "ece"        # Expected Calibration Error
+    - "brier"      # Brier Score
+    - "nll"        # Negative Log-Likelihood
+    - "accuracy"   # Classification Accuracy
+    - "f1"         # F1 Score
+  
+  # Selective Prediction
+  selective_prediction:
+    enabled: true
+    coverage_levels: [0.7, 0.8, 0.9, 1.0]
+  
+  # Calibration Plot
+  reliability_diagram:
+    enabled: true
+    num_bins: 15
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# Hardware
+device: "cuda"
+mixed_precision: true
+
+# Output
+output_dir: "experiments/general_nlp/squad"
+save_best_only: true
+save_total_limit: 3
