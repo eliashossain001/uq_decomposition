@@ -20,7 +20,7 @@ UAT-Lite integrates Bayesian uncertainty quantification directly into transforme
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/medbayes-lite-main.git
+git clone https://github.com/yourusername/uat-lite-main.git
 cd medbayes-lite-acl
 
 # Install dependencies
