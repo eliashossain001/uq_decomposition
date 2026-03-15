@@ -37,7 +37,7 @@ python scripts/evaluate.py --checkpoint experiments/general_nlp/squad/checkpoint
 ## 📁 Project Structure
 
 ```
-medbayes-lite-acl/
+uat-lite-acl/
 ├── src/                  # Source code
 │   ├── models/          # Model implementations
 │   ├── data/            # Data loaders
